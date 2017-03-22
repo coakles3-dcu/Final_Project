@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }else if(v.getId()==R.id.imageView4){
 
-            Intent intent = new Intent(this,CountdownTimer.class);
+            Intent intent = new Intent(this,Stopwatch.class);
             this.startActivity(intent);
 
         }

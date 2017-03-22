@@ -19,9 +19,6 @@
         <activity android:name=".News" />
         <activity android:name=".Record" />
         <activity android:name=".Stopwatch" />
-        <activity android:name=".CountdownTimer">
-
-        </activity>
     </application>
 
 </manifest>
