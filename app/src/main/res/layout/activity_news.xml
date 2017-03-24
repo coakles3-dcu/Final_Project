@@ -10,11 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.shane.final_project.News">
 
-    <TextView
-        android:text="News"
+    <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView2" />
+        android:id="@+id/recyclerview" />
 </RelativeLayout>
