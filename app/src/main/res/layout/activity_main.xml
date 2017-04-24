@@ -21,32 +21,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/stopwatch_button"
-
             android:layout_below="@+id/recordvid_button"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryDark"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:elevation="10dp"
+            android:textColor="@android:color/holo_orange_light"/>
 
         <Button
             android:text="Record Video"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recordvid_button"
-
             android:layout_below="@+id/records_button"
+            android:background="@color/colorPrimaryDark"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:elevation="10dp"
+            android:textColor="@android:color/holo_orange_light"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="26dp" />
+            android:layout_marginTop="26dp"
+            />
 
         <Button
             android:text="News"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/news_button"
-
             android:layout_marginTop="12dp"
-
-
             android:layout_below="@+id/stopwatch_button"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimaryDark"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:elevation="10dp"
+            android:textColor="@android:color/holo_orange_light"/>
 
         <Button
             android:text="Exercise Records"
@@ -56,7 +67,12 @@
 
             android:layout_marginTop="47dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimaryDark"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:elevation="10dp"
+            android:textColor="@android:color/holo_orange_light" />
 
     </RelativeLayout>
 
