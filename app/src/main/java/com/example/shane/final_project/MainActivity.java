@@ -85,40 +85,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this, ExerciseRecords.class);
                 startActivity(intent);
                 Toast.makeText(this, "Exercise Records",Toast.LENGTH_LONG).show();
-
-
-
-
-        }
-        switch (item.getItemId()){
+                break;
 
             case R.id.stopwatch_item:
                 Intent intent1 = new Intent(MainActivity.this,Stopwatch.class);
                 startActivity(intent1);
                 Toast.makeText(this, "Stopwatch",Toast.LENGTH_LONG).show();
-
-
-
-        }
-        switch (item.getItemId()){
-
+                break;
 
             case R.id.news_item:
                 Intent intent2 = new Intent(MainActivity.this,News.class);
                 startActivity(intent2);
                 Toast.makeText(this, "News",Toast.LENGTH_LONG).show();
-
-
-
-        }
-        switch (item.getItemId()){
+                break;
 
 
             case R.id.video_item:
                 Intent intent3 = new Intent(MainActivity.this,Record.class);
                 startActivity(intent3);
                 Toast.makeText(this, "Record",Toast.LENGTH_LONG).show();
+                break;
 
+            default:
+                setContentView(R.layout.activity_main);
 
         }
 

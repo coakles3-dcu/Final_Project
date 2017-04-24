@@ -41,28 +41,22 @@ public class News extends AppCompatActivity {
                 Intent intent = new Intent(News.this, ExerciseRecords.class);
                 startActivity(intent);
                 Toast.makeText(this, "Exercise Records",Toast.LENGTH_LONG).show();
-
-
-
-
-        }
-        switch (item.getItemId()){
+                break;
 
             case R.id.stopwatch_item:
                 Intent intent1 = new Intent(News.this,Stopwatch.class);
                 startActivity(intent1);
                 Toast.makeText(this, "Stopwatch",Toast.LENGTH_LONG).show();
-
-
-        }
-
-        switch (item.getItemId()){
+                break;
 
 
             case R.id.video_item:
                 Intent intent3 = new Intent(News.this,Record.class);
                 startActivity(intent3);
                 Toast.makeText(this, "Record",Toast.LENGTH_LONG).show();
+                break;
+            default:
+                setContentView(R.layout.activity_news);
 
         }
 
