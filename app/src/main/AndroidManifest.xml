@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExerciseRecords" />
-        <activity android:name=".News" />
-        <activity android:name=".Record" />
-        <activity android:name=".Stopwatch" />
+        <activity android:name=".ExerciseRecords" android:parentActivityName=".MainActivity" />
+        <activity android:name=".News" android:parentActivityName=".MainActivity" />
+        <activity android:name=".Record" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Stopwatch" android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

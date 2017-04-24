@@ -4,9 +4,13 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Stopwatch extends AppCompatActivity {
 
@@ -24,6 +28,8 @@ public class Stopwatch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
+
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
 
 
@@ -112,6 +118,49 @@ public class Stopwatch extends AppCompatActivity {
         });
 
 
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.stopwatch_menu, menu);
+
+        return (true);
+    }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.exercise_item:
+                Intent intent = new Intent(Stopwatch.this, ExerciseRecords.class);
+                startActivity(intent);
+                Toast.makeText(this, "Exercise Records",Toast.LENGTH_LONG).show();
+
+        }
+
+        switch (item.getItemId()){
+
+
+            case R.id.news_item:
+                Intent intent2 = new Intent(Stopwatch.this,News.class);
+                startActivity(intent2);
+                Toast.makeText(this, "News",Toast.LENGTH_LONG).show();
+
+
+
+        }
+        switch (item.getItemId()){
+
+
+            case R.id.video_item:
+                Intent intent3 = new Intent(Stopwatch.this,Record.class);
+                startActivity(intent3);
+                Toast.makeText(this, "Record",Toast.LENGTH_LONG).show();
+
+        }
+
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 
