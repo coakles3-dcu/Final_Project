@@ -5,14 +5,19 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/blackboard"
     tools:context="com.example.shane.final_project.MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/blackboard"
+
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
@@ -24,11 +29,11 @@
             android:layout_below="@+id/recordvid_button"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/holo_green_light"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:elevation="10dp"
-            android:textColor="@android:color/holo_orange_light"/>
+            android:textColor="@color/colorPrimaryDark"/>
 
         <Button
             android:text="Record Video"
@@ -68,13 +73,16 @@
             android:layout_marginTop="47dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:background="@color/colorPrimaryDark"
+            android:background="@android:color/holo_green_light"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:elevation="10dp"
-            android:textColor="@android:color/holo_orange_light" />
+            android:textColor="@color/colorPrimaryDark" />
 
     </RelativeLayout>
+
+
+</ScrollView>
 
 
 </RelativeLayout>

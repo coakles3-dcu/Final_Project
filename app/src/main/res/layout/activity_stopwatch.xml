@@ -11,7 +11,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/stopwatchLayout">
+        android:id="@+id/stopwatchLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
             android:src="@drawable/blackboard"
@@ -25,6 +27,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="20dp">
+
+            <Button
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:textColor="@color/colorPrimaryDark"
+                android:onClick="startClick"
+                android:text="@string/startTxt"
+                android:id="@+id/startButton"/>
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -69,19 +83,6 @@
                     android:textColor="@android:color/background_dark" />
 
 
-
-                <Button
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@android:color/holo_green_light"
-                    android:textColor="@android:color/black"
-                    android:onClick="startClick"
-                    android:text="@string/startTxt"
-                    android:id="@+id/startButton"/>
-
                 <Button
                     android:layout_marginRight="5dp"
                     android:layout_width="match_parent"
@@ -89,19 +90,14 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:background="?attr/colorPrimaryDark"
-                    android:textColor="@android:color/black"
                     android:text="@string/resetTxt"
                     android:onClick="resetClick"
                     android:id="@+id/resetButton"
-                    android:textColorHighlight="@android:color/black" />
+                    android:textColor="@android:color/holo_orange_light" />
 
             </LinearLayout>
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/scrollView">
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -111,7 +107,7 @@
                     android:textColor="@android:color/darker_gray" />
 
 
-            </ScrollView>
+
         </LinearLayout>
     </FrameLayout>
 </RelativeLayout>
