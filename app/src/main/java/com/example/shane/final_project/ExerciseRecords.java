@@ -13,10 +13,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Activity to carry out actions on our database
+ * <p>Class contains code based on
+ * http://www.codebind.com/android-tutorials-and-examples/android-sqlite-tutorial-example/
+ * @author Mithilesh Singh
+ * &
+ * https://www.tutorialspoint.com/android/android_sqlite_database.htm</p>
+ */
+
 public class ExerciseRecords extends AppCompatActivity {
 
+    //Instance of DatabaseHelper called from DatabaseHelper class
     DatabaseHelper myDb;
 
+    //Edittext where values are to be stored, removed or updated in the database are entered
     EditText editExercise, editWeight,editReps, editID;
     Button addData;
     Button viewAllRecords, updatebtn, deletebtn;
@@ -28,10 +39,14 @@ public class ExerciseRecords extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_records);
 
+        //Code for Back arrow in menu
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
+       // create a new instance of database helper
         myDb = new DatabaseHelper(this);
 
+
+        //Cast all buttons and textviews
         editExercise = (EditText) findViewById(R.id.exercise_editText);
         editWeight = (EditText) findViewById(R.id.weight_editText);
         editReps = (EditText) findViewById(R.id.reps_editText);
@@ -51,14 +66,20 @@ public class ExerciseRecords extends AppCompatActivity {
     }
 
 
+    /**
+     * Deletes records from the database
+     */
     public void deleteRecords(){
 
         deletebtn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //deletes records from the database according to the integer entered by user
                         Integer deletedRecords = myDb.deleteRecord(editID.getText().toString());
 
+                        //displays toast message
                         if(deletedRecords > 0)
                             Toast.makeText(ExerciseRecords.this, "Record deleted", Toast.LENGTH_LONG).show();
 
@@ -72,7 +93,9 @@ public class ExerciseRecords extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Adds data entered by user to the database
+     */
     public void addRecords(){
 
         addData.setOnClickListener(
@@ -80,6 +103,8 @@ public class ExerciseRecords extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        // takes all values entered, converts them to string values and adds them to the database
                         boolean isRecorded =  myDb.addRecords(editExercise.getText().toString(),
                                 editWeight.getText().toString(),
                                 editReps.getText().toString());
@@ -96,6 +121,9 @@ public class ExerciseRecords extends AppCompatActivity {
     }
 
 
+    /**
+     * updates a record by the ID chosen by the user
+     */
     public void upDateRecords(){
 
         updatebtn.setOnClickListener(
@@ -103,6 +131,8 @@ public class ExerciseRecords extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Selects the record by the Id entered and updates all fields
                         boolean isUpdated = myDb.updateResults(editID.getText().toString(),
                                 editExercise.getText().toString(),
                                 editWeight.getText().toString(),
@@ -123,6 +153,9 @@ public class ExerciseRecords extends AppCompatActivity {
     }
 
 
+    /**
+     * Gets all the records stored in the database
+     */
     public void getAllResults(){
 
 
@@ -132,6 +165,7 @@ public class ExerciseRecords extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
+                        //cursor to move throught the data in the database
                         Cursor records = myDb.getAllRecords();
 
                         if(records.getCount() == 0){
@@ -141,9 +175,12 @@ public class ExerciseRecords extends AppCompatActivity {
                             return;
                         }
 
+                        //Stringbuffer to hold all values as they are passed to it
                         StringBuffer buffer = new StringBuffer();
+                        // gives the first column and moves on to next bit of data until it reaches the end
                         while(records.moveToNext()){
 
+                            //values are added to buffer
                             buffer.append("ID : "+ records.getString(0)+ "\n");
                             buffer.append("EXERCISE : "+ records.getString(1)+ "\n");
                             buffer.append("WEIGHT : "+ records.getString(2)+ "\n");
@@ -163,6 +200,13 @@ public class ExerciseRecords extends AppCompatActivity {
 
     }
 
+
+    /**
+     *Displays all records
+     * @param Title outlined as Records in getAllResults()
+     * @param Message buffer that all the data has been added to
+     * <p>Receives data from getAllResults</p>
+     */
     public void displayMessage(String Title, String Message){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -185,6 +229,15 @@ public class ExerciseRecords extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
 
+
+
+        /**
+         * Handle selections in Records Menu
+         * <p>Method contains code adapted from
+         * https://www.youtube.com/watch?v=53ssqFDR_VM
+         * @author Kika Nduka</p>
+         * @return Returns item selected
+         */
 
         switch (item.getItemId()){
 

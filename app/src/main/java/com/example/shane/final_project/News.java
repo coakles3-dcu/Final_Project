@@ -9,9 +9,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
+/**
+ * Activity to fetch data from web address and display in recycler view
+ * <p>Class contains code based on
+ * https://www.youtube.com/watch?v=19NSla4FNdQ&list=PLOvzGCa-rsH-9QjlFBVHfBNUzPGHGzj-5
+ * @author Amar Yadav</p>
+ */
 public class News extends AppCompatActivity {
 
+    // Declare recycler view
     RecyclerView recyclerView;
 
     @Override
@@ -19,10 +25,14 @@ public class News extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+
+        //Code for Back arrow in menu
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-
+        // Assign declared recycler view to recyclerview in layout
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+
+        // create object of RSSRead and pass it the context and recycler view
         RSSRead readRss = new RSSRead(this, recyclerView);
         readRss.execute();
 
@@ -34,6 +44,16 @@ public class News extends AppCompatActivity {
         menuInflater.inflate(R.menu.news_menu, menu);
 
         return (true);
+
+
+
+        /**
+         * Handle selections in Menu
+         * <p>Method contains code adapted from
+         * https://www.youtube.com/watch?v=53ssqFDR_VM
+         * @author Kika Nduka</p>
+         * @return Returns item selected
+         */
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

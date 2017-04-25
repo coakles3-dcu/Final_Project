@@ -12,6 +12,19 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+/**
+ * Activity for Video Recording Functionality
+ * <p>Class contains code adapted form
+ * https://www.youtube.com/watch?v=5sEeprYnHa8#t=1405.122058
+ * @author Mobile Application Tutorials
+ * &
+ * https://www.youtube.com/watch?v=BC0BcwYFCas
+ * @author Solo Traveler Hari
+ * &
+ * SDA Mobile Development Application Development
+ * @author Colette Kirwan & Dr. Eamon Costello </p>
+ */
+
 public class Record extends AppCompatActivity {
 
 
@@ -25,14 +38,26 @@ public class Record extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
 
+        //Code for back arrow to return to home screen
+
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
+        //setting videoView to the videoView in layout
+
         videoView = (VideoView) findViewById(R.id.videoView);
+
+        //setting the recButton to the recButton in the layout
+
         recButton = (Button) findViewById(R.id.recButton);
 
+        //setting the onClicklistener for the record button
 
         recButton.setOnClickListener(new View.OnClickListener() {
             @Override
+
+            /**
+             * Call the method to capture the video
+             */
             public void onClick(View v) {
 
                 captureVideo();
@@ -40,6 +65,11 @@ public class Record extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method to capture the video
+     * <p>Intent to call Video Capture functionality from Mediastore
+     *</p>
+     */
     private void captureVideo(){
 
         Intent recIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
@@ -51,6 +81,11 @@ public class Record extends AppCompatActivity {
 
     @Override
 
+
+    /**
+     * Starts the Video view
+     * <p>Starts video view once it receives the request code, result code and data from the capture video</p>
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
         if(requestCode == CAMERA_RECORD_REQUEST_CODE){
@@ -59,11 +94,7 @@ public class Record extends AppCompatActivity {
                 videoView.setVisibility(View.VISIBLE);
                 videoView.start();
 
-
             }
-
-
-
         }
 
     }
@@ -76,8 +107,16 @@ public class Record extends AppCompatActivity {
         menuInflater.inflate(R.menu.video_menu, menu);
 
         return (true);
+
     }
 
+    /**
+     * Handle selections in Records Menu
+     * <p>Method contains code adapted from
+     * https://www.youtube.com/watch?v=53ssqFDR_VM
+     * @author Kika Nduka</p>
+     * @return Returns item selected
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.exercise_item:

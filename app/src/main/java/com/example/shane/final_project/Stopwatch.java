@@ -12,66 +12,83 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+/**
+ * Activity for Stopwatch functionality
+ * <p>Class contains code based on
+ * http://www.shawnbe.com/index.php/tutorial/tutorial-1-a-simple-stopwatch-designing-layout/
+ * &
+ * https://github.com/dogriffiths/HeadFirstAndroid/blob/master/chapter04/Stopwatch/app/src/main/java/com/hfad/stopwatch/StopwatchActivity.java
+ * @author  dogriffiths/HeadFirstAndroid
+ * &
+ * http://www.android-examples.com/android-create-stopwatch-example-tutorial-in-android-studio/
+ * @author  Juned Mughal</p>
+ */
+
 public class Stopwatch extends AppCompatActivity {
 
 
 
-
+    // Rate for timer display to update every second
     private final int REFRESH_RATE = 1000;
 
     private int time = 0;
-    // private boolean stopped = false;
+
+    //Boolean to check if timer is running
     private boolean running;
-    //private boolean stopped;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
 
+        //Code for Back arrow in menu
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
 
 
+        //Calls timer method
         updateTimer();
 
     }
 
 
+    /**
+     * Processes clicking of start button
+     * @param view View associated with timer running, displays stop button
+     */
     public void startClick (View view){
-
-
         running= true;
         showStopButton();
-       /* if(stopped){
-            startTime = System.currentTimeMillis() - elapsedTime;
 
-        }
-        else{
-
-            startTime = System.currentTimeMillis();
-        }
-
-       /* mHandler.removeCallbacks(startTimer);
-        mHandler.postDelayed(startTimer, 0);*/
     }
 
+    /**
+     * Processes clicking of Stop button
+     * @param view View associated with timer stopped, start and reset buttons displayed
+     */
     public void stopClick (View view){
         running=false;
         hideStopButton();
-        // mHandler.removeCallbacks(startTimer);
-        //stopped = true;
     }
 
 
+    /**
+     * Processes clicking of reset button
+     * @param view View associated with reset, timer stopped and returned to zero
+     */
     public void resetClick (View view){
 
         running = false;
-        //stopped = false;
         time = 0;
     }
 
 
+    /**
+     * Method to show stop button
+     * <p>Once stop button is set to Visible, the start and reset buttons are not visible</p>
+     */
     private void showStopButton(){
 
         Button startButton = (Button) findViewById(R.id.startButton);
@@ -83,6 +100,11 @@ public class Stopwatch extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Method to hide the stop button
+     * <p>When the start and reset buttons are visible , the stop button is not visible</p>
+     */
     private void hideStopButton(){
 
         Button startButton = (Button) findViewById(R.id.startButton);
@@ -94,6 +116,10 @@ public class Stopwatch extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Calculates the timer updates for each second
+     */
     private void updateTimer () {
 
         final TextView timeText = (TextView) findViewById(R.id.timer);
@@ -105,7 +131,6 @@ public class Stopwatch extends AppCompatActivity {
                 int hrs = time / 3600;
                 int mins = (time % 3600) / 60;
                 int sec = time % 60;
-                // int millisec = time;
                 String timerTxt = String.format("%d:%02d:%02d", hrs, mins, sec);
                 timeText.setText(timerTxt);
                 if (running) {
@@ -120,7 +145,6 @@ public class Stopwatch extends AppCompatActivity {
 
     }
 
-
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater menuInflater = getMenuInflater();
@@ -128,6 +152,14 @@ public class Stopwatch extends AppCompatActivity {
 
         return (true);
     }
+
+    /**
+     * Handle selections in Records Menu
+     * <p>Method contains code adapted from
+     * https://www.youtube.com/watch?v=53ssqFDR_VM
+     * @author Kika Nduka</p>
+     * @return Returns item selected
+     */
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.exercise_item:
