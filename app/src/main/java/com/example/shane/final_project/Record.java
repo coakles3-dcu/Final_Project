@@ -114,7 +114,7 @@ public class Record extends AppCompatActivity {
      * Handle selections in Records Menu
      * <p>Method contains code adapted from
      * https://www.youtube.com/watch?v=53ssqFDR_VM
-     * @author Kika Nduka</p>
+     * author Kika Nduka</p>
      * @return Returns item selected
      */
     public boolean onOptionsItemSelected(MenuItem item) {

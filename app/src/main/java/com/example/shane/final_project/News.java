@@ -51,7 +51,7 @@ public class News extends AppCompatActivity {
          * Handle selections in Menu
          * <p>Method contains code adapted from
          * https://www.youtube.com/watch?v=53ssqFDR_VM
-         * @author Kika Nduka</p>
+         * author Kika Nduka</p>
          * @return Returns item selected
          */
     }

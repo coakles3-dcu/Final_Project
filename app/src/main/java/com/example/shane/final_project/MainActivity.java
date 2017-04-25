@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * Handle selections in Menu
      * <p>Method contains code adapted from
      * https://www.youtube.com/watch?v=53ssqFDR_VM
-     * @author Kika Nduka</p>
+     * author Kika Nduka</p>
      * @return Returns item selected
      */
     public boolean onOptionsItemSelected(MenuItem item) {

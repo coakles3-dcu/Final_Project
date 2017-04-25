@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -46,15 +47,30 @@ public class ExerciseRecords extends AppCompatActivity {
         myDb = new DatabaseHelper(this);
 
 
+
+
         //Cast all buttons and textviews
         editExercise = (EditText) findViewById(R.id.exercise_editText);
+        if(editExercise.getText().toString().length() ==0)
+            editExercise.setError("Exercise Required");
+
+
         editWeight = (EditText) findViewById(R.id.weight_editText);
+        if(editWeight.getText().toString().length() ==0)
+            editWeight.setError("Weight Required");
+
         editReps = (EditText) findViewById(R.id.reps_editText);
+        if(editReps.getText().toString().length() ==0)
+            editReps.setError("Exercise Required");
+
         editID = (EditText) findViewById(R.id.id_editText);
         addData = (Button) findViewById(R.id.add_button);
         viewAllRecords = (Button) findViewById(R.id.allRecordsbutton);
         updatebtn = (Button) findViewById(R.id.update_button);
         deletebtn = (Button) findViewById(R.id.delete_buttonId);
+
+
+
 
         addRecords();
         getAllResults();
@@ -98,16 +114,20 @@ public class ExerciseRecords extends AppCompatActivity {
      */
     public void addRecords(){
 
+
         addData.setOnClickListener(
 
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
+
+
                         // takes all values entered, converts them to string values and adds them to the database
                         boolean isRecorded =  myDb.addRecords(editExercise.getText().toString(),
                                 editWeight.getText().toString(),
                                 editReps.getText().toString());
+
 
                         if(isRecorded == true)
                             Toast.makeText(ExerciseRecords.this, "Record has been added", Toast.LENGTH_LONG).show();
@@ -235,7 +255,7 @@ public class ExerciseRecords extends AppCompatActivity {
          * Handle selections in Records Menu
          * <p>Method contains code adapted from
          * https://www.youtube.com/watch?v=53ssqFDR_VM
-         * @author Kika Nduka</p>
+         * author Kika Nduka</p>
          * @return Returns item selected
          */
 
