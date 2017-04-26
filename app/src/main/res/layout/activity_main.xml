@@ -17,12 +17,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="Stopwatch"
+            android:text="@string/backGroundTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/stopwatch_button"
@@ -36,7 +35,7 @@
             android:textColor="@color/colorPrimaryDark"/>
 
         <Button
-            android:text="Record Video"
+            android:text="@string/recVid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/recordvid_button"
@@ -51,7 +50,7 @@
             />
 
         <Button
-            android:text="News"
+            android:text="@string/news"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/news_button"
@@ -65,11 +64,10 @@
             android:textColor="@android:color/holo_orange_light"/>
 
         <Button
-            android:text="Exercise Records"
+            android:text="@string/exRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/records_button"
-
             android:layout_marginTop="47dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

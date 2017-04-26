@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:text="ID:"
+        android:text="@string/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/reps_textView"
@@ -31,7 +31,7 @@
         android:textSize="24sp" />
 
         <Button
-        android:text="View All Records"
+        android:text="@string/viewRecs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/allRecordsbutton"
@@ -42,7 +42,7 @@
         android:layout_alignEnd="@+id/delete_buttonId" />
 
     <Button
-        android:text="Delete Records"
+        android:text="@string/delRecs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -54,7 +54,7 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Weight:"
+        android:text="@string/weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
@@ -65,7 +65,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:text="Reps:"
+        android:text="@string/reps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
@@ -76,7 +76,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:text="Update Records"
+        android:text="@string/updtRecs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -92,7 +92,7 @@
         android:ems="10"
         android:id="@+id/weight_editText"
         android:inputType="number"
-        android:hint="Enter Weight"
+        android:hint="@string/entWeight"
         android:textColor="?android:attr/textColorHintInverse"
         android:layout_alignBaseline="@+id/weight_textView"
         android:layout_alignBottom="@+id/weight_textView"
@@ -104,7 +104,7 @@
         android:ems="10"
         android:id="@+id/reps_editText"
         android:inputType="number"
-        android:hint="Enter Reps"
+        android:hint="@string/entreps"
         android:textColor="?android:attr/textColorHintInverse"
         android:layout_alignBottom="@+id/reps_textView"
         android:layout_alignParentEnd="true" />
@@ -115,13 +115,13 @@
         android:ems="10"
         android:id="@+id/id_editText"
         android:inputType="number"
-        android:hint="Update, Delete ID"
+        android:hint="@string/update"
         android:layout_alignBottom="@+id/id_textView"
         android:textColor="?android:attr/textColorHintInverse"
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Exercise :"
+        android:text="@string/exer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
@@ -145,7 +145,7 @@
         android:layout_alignParentEnd="true" />
 
         <Button
-            android:text="Add Record"
+            android:text="@string/addRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/add_button"

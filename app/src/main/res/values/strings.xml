@@ -6,4 +6,23 @@
     <string name="resetTxt">RESET</string>
 <string name="backGroundTxt">Stopwatch</string>
     <string name="enterExercise">Enter Exercise</string>
+    <string name="reps">Reps :</string>
+    <string name="weight">Weight :</string>
+    <string name="updtRecs">Update Records</string>
+    <string name="entWeight">Enter Weight</string>
+    <string name="entreps">Enter Reps</string>
+    <string name="update">Update, Delete ID</string>
+    <string name="exer">Exercise :</string>
+    <string name="addRec">Add Record</string>
+    <string name="id">ID :</string>
+    <string name="viewRecs">View All Records</string>
+    <string name="delRecs">Delete Records</string>
+    <string name="recVid">Record Video</string>
+    <string name="news">News</string>
+    <string name="exRec">Exercise Records</string>
+    <string name="txtview">TextView</string>
+    <string name="rec">Record</string>
+
+
+
     </resources>
