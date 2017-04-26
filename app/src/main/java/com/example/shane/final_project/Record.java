@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 /**
  * Activity for Video Recording Functionality
@@ -30,7 +29,7 @@ public class Record extends AppCompatActivity {
 
     private static final int CAMERA_RECORD_REQUEST_CODE = 1;
 
-    private VideoView videoView;
+
     private Button recButton;
 
     @Override
@@ -42,9 +41,7 @@ public class Record extends AppCompatActivity {
 
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
 
-        //setting videoView to the videoView in layout
 
-        videoView = (VideoView) findViewById(R.id.videoView);
 
         //setting the recButton to the recButton in the layout
 
@@ -82,22 +79,8 @@ public class Record extends AppCompatActivity {
     @Override
 
 
-    /**
-     * Starts the Video view
-     * <p>Starts video view once it receives the request code, result code and data from the capture video</p>
-     */
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
 
-        if(requestCode == CAMERA_RECORD_REQUEST_CODE){
-            if(resultCode == RESULT_OK){
 
-                videoView.setVisibility(View.VISIBLE);
-                videoView.start();
-
-            }
-        }
-
-    }
 
 
 

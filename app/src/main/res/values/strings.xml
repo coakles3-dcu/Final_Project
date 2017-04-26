@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Final_Project</string>
+    <string name="app_name">Assignment 5 Shane Coakley</string>
     <string name="timer">0:00:00</string>
     <string name="startTxt">START</string>
     <string name="stopTxt">STOP</string>
     <string name="resetTxt">RESET</string>
 <string name="backGroundTxt">Stopwatch</string>
+    <string name="enterExercise">Enter Exercise</string>
     </resources>
